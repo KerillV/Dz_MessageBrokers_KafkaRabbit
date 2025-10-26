@@ -1,0 +1,12 @@
+# Заявка на получение кредита
+POST http://localhost:8080/api/credit-applications
+{
+    "amount": 10000000,
+    "term": 12,
+    "income": 50000,
+    "currentCreditLoad": 10000,
+    "creditRating": 900
+}
+
+# Получение статуса заявки по id
+GET http://localhost:8080/api/credit-applications/{id}/status

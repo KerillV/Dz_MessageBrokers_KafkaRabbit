@@ -2,15 +2,17 @@ package netology.creditapplicationservice.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import netology.creditapplicationservice.model.ApplicationStatus;
 
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "credit_applications")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreditApplication {

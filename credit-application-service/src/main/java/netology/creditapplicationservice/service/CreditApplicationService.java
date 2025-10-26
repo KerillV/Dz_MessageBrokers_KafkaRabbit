@@ -9,6 +9,7 @@ import netology.creditapplicationservice.model.ApplicationStatus;
 import netology.creditapplicationservice.repository.CreditApplicationRepository;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,9 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class CreditApplicationService {
     private final CreditApplicationRepository repository;
-    public KafkaTemplate<String, CreditApplicationEvent> kafkaTemplate;
+
+    @Autowired
+    private KafkaTemplate<String, CreditApplicationEvent> kafkaTemplate;
 
     public Long createApplication(CreditApplicationRequest request) {
         CreditApplication application = new CreditApplication(); // создаем сущность

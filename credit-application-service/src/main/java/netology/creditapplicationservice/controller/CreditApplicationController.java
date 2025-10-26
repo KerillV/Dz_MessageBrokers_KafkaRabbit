@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/credit-applications")
+@RequestMapping(value = "/api/credit-applications", produces = {"application/json"})
 @RequiredArgsConstructor
 public class CreditApplicationController {
 
